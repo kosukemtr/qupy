@@ -10,6 +10,8 @@ def expm_pauli(q, theta=0, op=0):
     Args:
         q (:class:`qupy.qubit.Qubits`):
             the state which you want to apply
+        theta (:class:`float`):
+            rotation angle
         op (:class:`str`)
             the pauli string
     """
@@ -57,6 +59,6 @@ if __name__ == '__main__':
     q_ins.gate(operator.H, target = 1)
     q_ins.gate(operator.H, target = 0)
     th = np.pi/2
-    paulistr = "YY"
+    paulistr = "ZY"
     expm_pauli(q_ins, th, paulistr)
     print(q_ins.get_state())
