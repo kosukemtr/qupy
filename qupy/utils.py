@@ -3,8 +3,8 @@ import numpy as np
 import qupy.operator as operator
 
 
-def expm_pauli(q, theta=0, op=0):
-    """expm_pauli(q, H)
+def expm_pauli(q, theta, op):
+    """expm_pauli(q, theta, op)
     applies Pauli rotation $expm(-i*theta*op)$ on the Qubits instance q
 
     Args:
@@ -15,12 +15,8 @@ def expm_pauli(q, theta=0, op=0):
         op (:class:`str`)
             the pauli string
     """
-    # print(op)
-    # largest nonzero index will be target
     target_list = np.where(op != "I")[-1]
     cnot_target = int(target_list[-1])
-    #print("target", target)
-    #print(cnot_target, op[cnot_target])
     if op[cnot_target] == "X":
         q.gate(operator.H, target=cnot_target)
     elif op[cnot_target] == "Y":
