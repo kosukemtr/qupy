@@ -17,7 +17,6 @@ def expm_pauli(q, theta, op):
     """
     target_list = [i for i, p in enumerate(op) if p != "I"]
     cnot_target = int(target_list[-1])
-    print(target_list, cnot_target)
     if op[cnot_target] == "X":
         q.gate(operator.H, target=cnot_target)
     elif op[cnot_target] == "Y":
