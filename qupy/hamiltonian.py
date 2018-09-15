@@ -117,11 +117,11 @@ def expect(q, H):
             if op[i] == "I":
                 pass
             elif op[i] == "X":
-                q.gate(operator.X, target=i)
+                q.gate(X, target=i)
             elif op[i] == "Y":
-                q.gate(operator.Y, target=i)
+                q.gate(Y, target=i)
             elif op[i] == "Z":
-                q.gate(operator.Z, target=i)
+                q.gate(Z, target=i)
         ret += coef * xp.real(xp.einsum(subscripts, np.conj(org_data), q.data))
         q.set_state(np.copy(org_data))
     return ret
