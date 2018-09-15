@@ -32,7 +32,6 @@ class Hamiltonian:
     def __init__(self, n_qubit, coefs=None, ops=None):
         self.n_qubit = n_qubit
         self.coefs = coefs if coefs is not None else []
-        print(type(coefs))
         self.ops = ops if ops is not None else []
 
     def append(self, coef, op):
