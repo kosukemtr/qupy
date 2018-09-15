@@ -8,3 +8,4 @@ venv/
 .python-version
 *.pyc
 qupy/__pycache__/
+examples/
