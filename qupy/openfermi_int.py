@@ -17,7 +17,7 @@ def convert_openfermion_op(openfermion_op):
 
     coefs = []
     for term in terms:
-        coefs.append(terms[term])
+        coefs.append(float(np.real(terms[term])))
         # count number of qubit
         for one_operator in term:
             n_qubit = one_operator[0] if n_qubit < one_operator[0] else n_qubit
