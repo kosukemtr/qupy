@@ -52,8 +52,8 @@ def expm_pauli(q, theta, op):
 if __name__ == '__main__':
     from qupy.qubit import Qubits
     q_ins = Qubits(2)
-    q_ins.gate(operator.H, target = 1)
-    q_ins.gate(operator.H, target = 0)
+    q_ins.gate(operator.H, target=1)
+    q_ins.gate(operator.H, target=0)
     th = np.pi/2
     paulistr = "ZY"
     expm_pauli(q_ins, th, paulistr)
